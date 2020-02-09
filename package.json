@@ -1,0 +1,22 @@
+{
+  "name": "to-do-app-node",
+  "version": "1.0.0",
+  "description": "post-holiday repeat",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/simonsGoneCoding/post-holiday-repeat-TOdoApp-NODE.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/simonsGoneCoding/post-holiday-repeat-TOdoApp-NODE/issues"
+  },
+  "homepage": "https://github.com/simonsGoneCoding/post-holiday-repeat-TOdoApp-NODE#readme",
+  "dependencies": {
+    "minimist": "^1.2.0"
+  }
+}
