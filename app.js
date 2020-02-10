@@ -1,5 +1,6 @@
 const parseArgs = require("minimist");
 const colors = require("colors");
+const fs = require("fs");
 
 const command = parseArgs(process.argv);
 delete command._;
@@ -9,7 +10,7 @@ delete command._;
 const handleCommand = ({ add, remove, list }) => {
   //   console.log(add, remove, list);
   if (add) {
-    console.log("Adding in process...".green + "\n");
+    console.log("Adding in process...".green + "\n" + "...".green);
     if (typeof add !== "string") {
       return console.log("Error!!! String must be provided".red);
     } else if (add.length < 7) {
@@ -42,8 +43,11 @@ const handleCommand = ({ add, remove, list }) => {
   }
 };
 
-const handleData = () => {
-  console.log("handling data");
+const handleData = (type, title) => {
+  console.log("handling data...".green);
+  const data = fs.readFileSync("db.json");
+  const tasks = JSON.parse(data);
+  console.log(typeof tasks);
 };
 
 handleCommand(command);
