@@ -61,6 +61,10 @@ const handleData = (type, title) => {
   let dataJSON = "";
   switch (type) {
     case 1:
+      //reset for id numbers (bug fix)
+      tasks.forEach((task, index) => {
+        task.id = index + 1;
+      }); // gug fix
       const id = tasks.length + 1;
       tasks.push({ id, title });
       // console.log(tasks);
@@ -73,6 +77,11 @@ const handleData = (type, title) => {
     case 2:
       const index = tasks.findIndex(task => task.title === title);
       tasks.splice(index, 1);
+      // id bug fix
+      tasks.forEach((task, index) => {
+        task.id = index + 1;
+      });
+      // id bug fix
       dataJSON = JSON.stringify(tasks);
       fs.writeFile("db.json", dataJSON, "utf8", err => {
         if (err) throw err;
